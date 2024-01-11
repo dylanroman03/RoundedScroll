@@ -7,11 +7,11 @@ class RoundedScroll extends StatefulWidget {
   const RoundedScroll({
     required this.children,
     super.key,
-    this.backColor,
+    this.color,
     this.padding,
   });
   final List<Widget> children;
-  final Color? backColor;
+  final Color? color;
   final EdgeInsetsGeometry? padding;
 
   @override
@@ -51,7 +51,7 @@ class _RoundedScrollState extends State<RoundedScroll> {
         padding: widget.padding,
         child: Container(
           decoration: BoxDecoration(
-            color: widget.backColor ?? Theme.of(context).primaryColor,
+            color: widget.color ?? Theme.of(context).primaryColor,
             borderRadius: BorderRadius.circular(30),
           ),
           child: Column(
