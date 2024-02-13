@@ -1,8 +1,11 @@
+/// A customizable rounded scrollable container widget with an icon that updates as you scroll.
+/// Useful for modern UI designs in Flutter.
 library rounded_scroll;
 
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
+/// A scrollable container with rounded edges.
 class RoundedScroll extends StatefulWidget {
   const RoundedScroll({
     required this.children,
@@ -10,8 +13,14 @@ class RoundedScroll extends StatefulWidget {
     this.color,
     this.padding,
   });
+
+  /// The widgets placed inside the scrollable container.
   final List<Widget> children;
+
+  /// The background color of the container.
   final Color? color;
+
+  /// The padding of the container.
   final EdgeInsetsGeometry? padding;
 
   @override
@@ -26,19 +35,15 @@ class _RoundedScrollState extends State<RoundedScroll> {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
 
-    var scrollLine = ScrollLine(
+    final scrollLine = ScrollLine(
       width: size.width,
       scrolling: scrolling,
       scrollingUp: scrollingUp,
     );
 
     return NotificationListener<ScrollNotification>(
-      onNotification: (notification) {
-        List scrolls = onNotification(
-          notification,
-          scrolling,
-          scrollingUp,
-        );
+      onNotification: (ScrollNotification notification) {
+        final List<bool> scrolls = onNotification(notification);
 
         setState(() {
           scrolling = scrolls[0];
@@ -66,16 +71,22 @@ class _RoundedScrollState extends State<RoundedScroll> {
   }
 }
 
+/// Widget representing the scroll line icon.
 class ScrollLine extends StatelessWidget {
   const ScrollLine({
-    Key? key,
     required this.scrolling,
     required this.scrollingUp,
     required this.width,
-  }) : super(key: key);
+    super.key,
+  });
 
+  /// Indicates whether scrolling is ongoing.
   final bool scrolling;
+
+  /// Indicates whether scrolling is upward.
   final bool scrollingUp;
+
+  /// The width of the scroll line.
   final double width;
 
   @override
@@ -103,8 +114,11 @@ class ScrollLine extends StatelessWidget {
   }
 }
 
-List<dynamic> onNotification(notification, scrolling, scrollingUp) {
-  String e = notification.toString();
+/// Function to handle scroll notifications.
+List<bool> onNotification(ScrollNotification notification) {
+  final String e = notification.toString();
+  var scrolling = false;
+  var scrollingUp = false;
 
   if (e.contains('ScrollDirection.reverse')) {
     scrolling = true;

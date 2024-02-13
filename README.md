@@ -1,39 +1,93 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Rounded Scroll
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+<!-- [![Pub Version](https://img.shields.io/pub/v/rounded_scroll)](https://pub.dev/packages/rounded_scroll) -->
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+Rounded Scroll is a Flutter package that provides a customizable rounded scrollable container widget with a scroll indicator icon. It is suitable for creating modern UI designs with scrollable content.
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+![Example 1](screenshots/flutter_1.png) ![Example 2](screenshots/flutter_2.png)
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Rounded container with customizable background color.
+- Scroll indicator icon that updates dynamically based on scroll direction.
+- Easy to integrate into existing Flutter projects.
 
-## Getting started
+## Installation
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+To use this package, add `rounded_scroll` as a dependency in your `pubspec.yaml` file.
+
+```yaml
+dependencies:
+  rounded_scroll: ^1.0.0
+```
+
+Then, import the package in your code:
+
+```dart
+import 'package:rounded_scroll/rounded_scroll.dart';
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Wrap your content inside a `RoundedScroll` widget and provide a list of children widgets. You can customize the container's background color and padding.
 
 ```dart
-const like = 'sample';
+RoundedScroll(
+  children: [
+    // Your child widgets here
+  ],
+  color: Colors.blue, // Optional: specify background color
+  padding: EdgeInsets.all(16), // Optional: specify padding
+)
 ```
 
-## Additional information
+That's it! Your content will now be displayed inside a rounded scrollable container with a scroll indicator.
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+## Examples
+
+Here's a simple example of how you can use `RoundedScroll` in your Flutter app:
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:rounded_scroll/rounded_scroll.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Rounded Scroll Example'),
+        ),
+        body: RoundedScroll(
+          children: [
+            ListTile(
+              title: Text('Item 1'),
+            ),
+            ListTile(
+              title: Text('Item 2'),
+            ),
+            ListTile(
+              title: Text('Item 3'),
+            ),
+            // Add more child widgets as needed
+          ],
+          color: Colors.green, // Customize background color
+          padding: EdgeInsets.all(16), // Add padding if necessary
+        ),
+      ),
+    );
+  }
+}
+```
+
+## License
+
+This package is licensed under the [MIT License](LICENSE).
+
+## Github Repository
+[Github Repository](https://github.com/dylanroman03)

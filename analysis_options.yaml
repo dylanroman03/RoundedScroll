@@ -1,4 +1,32 @@
-include: package:flutter_lints/flutter.yaml
+# This file configures the analyzer to use the lint rule set from `package:lint`
 
-# Additional information about this file can be found at
-# https://dart.dev/guides/language/analysis-options
+include: package:lint/strict.yaml # For production apps
+# include: package:lint/casual.yaml # For code samples, hackathons and other non-production code
+# include: package:lint/package.yaml # Use this for packages with public API
+
+
+# You might want to exclude auto-generated files from dart analysis
+analyzer:
+  language:
+    strict-casts: true
+
+  exclude:
+    #- '**.freezed.dart'
+    - '**.g.dart'
+
+# You can customize the lint rules set to your own liking. A list of all rules
+# can be found at https://dart-lang.github.io/linter/lints/options/options.html
+linter:
+  rules:
+    # Util classes are awesome!
+    avoid_classes_with_only_static_members: false
+    sort_constructors_first: true
+    prefer_double_quotes: false
+    always_put_required_named_parameters_first: true
+    prefer_const_constructors: true
+    prefer_relative_imports: false
+    use_is_even_rather_than_modulo: false
+    avoid_web_libraries_in_flutter: false
+    unnecessary_library_directive: false
+
+
