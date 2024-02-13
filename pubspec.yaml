@@ -1,6 +1,6 @@
 name: rounded_scroll
 description: Swipe and scroll in style! RoundedScroll is the perfect widget for your modern Flutter designs. Customize it to your liking and watch it update as you navigate!
-version: 1.0.0
+version: 1.0.1
 repository: https://github.com/dylanroman03/RoundedScroll
 # homepage:
 
@@ -19,6 +19,13 @@ dev_dependencies:
     sdk: flutter
 
   lint: ^2.0.0
+
+topics: 
+  - flutter
+  - scroll
+  - rounded
+  - widget
+  - ui
 
 # The following section is specific to Flutter packages.
 flutter:

@@ -5,9 +5,10 @@
 Rounded Scroll is a Flutter package that provides a customizable rounded scrollable container widget with a scroll indicator icon. It is suitable for creating modern UI designs with scrollable content.
 
 <p float="left">
-  <img src="screenshots/flutter_1.png" alt="real_example_1" width="200"/>
-  <img src="screenshots/flutter_2.png" alt="real_example_2" width="200"/>
+  <img src="https://raw.githubusercontent.com/dylanroman03/RoundedScroll/main/screenshots/flutter_1.png" alt="real_example_1" width="200"/>
+  <img src="https://raw.githubusercontent.com/dylanroman03/RoundedScroll/main/screenshots/flutter_2.png" alt="real_example_2" width="200"/>
 </p>
+
 ## Features
 
 - Rounded container with customizable background color.
